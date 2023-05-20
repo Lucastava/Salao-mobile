@@ -6,4 +6,8 @@ export class User {
     email:string = "";
     senha:string = "";
     telefone:string = "";
+
+    add(){
+        console.log("SALVO!");
+    }
 }
