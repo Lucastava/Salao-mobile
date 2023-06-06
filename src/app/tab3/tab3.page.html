@@ -7,11 +7,46 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <form #fc="ngForm">
+    <ion-list>
+      <ion-item class="pt-10">
+      <ion-input label="Nome" label-Placement="floating"
+      filll="outline" placeholder=" Digite o Nome do produto" [(ngModel)]="produto.nome" name="nome"
+      required></ion-input>
+      </ion-item>
+ 
+      <ion-item class="pt-10">
+        <ion-input label="Categoria" label-Placement="floating"
+        filll="outline" placeholder="Digite a Categoria" 
+        [(ngModel)]="produto.categoria" name="categoria" required ></ion-input>
+        </ion-item>
+
+        <ion-item class="pt-10">
+          <ion-input label="Descrição" label-Placement="floating"
+          filll="outline" placeholder="Descrição" 
+          [(ngModel)]="produto.descricao" name="descricao"></ion-input>
+          </ion-item>
+
+          <ion-item class="pt-10">
+            <ion-input label="Quantidade" label-Placement="floating"
+            filll="outline" placeholder="Digite a Quantidade"
+            [(ngModel)]="produto.quant" name="quant"></ion-input>
+            </ion-item>
+
+            <ion-item class="pt-10">
+              <ion-input label="valor" label-Placement="floating"
+              filll="outline" placeholder="Digite o valor"
+              [(ngModel)]="produto.valor" name="valor"></ion-input>
+              </ion-item>
+  
+
+          <ion-item  class="pt-10" >
+            <ion-button [disabled]="fc.invalid" slot="end" (click)="Save()">Cadastrar</ion-button>
+            <ion-button color="danger" slot="end">Cancelar</ion-button>
+          </ion-item>
+
+    </ion-list>
+  </form>
 </ion-content>
